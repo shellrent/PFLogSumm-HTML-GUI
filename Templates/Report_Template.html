@@ -5,14 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Postfix Report">
-    <meta name="author" content="">
+    <meta name="author" content="Shellrent S.p.a.">
     <link rel="icon" href="http://www.postfix.org/favicon.ico">
 
     <title>Postfix PFLOGSUMM Report</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css">
 
 
@@ -30,6 +31,11 @@
         .spacer15 {
             height: 15px;
         }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f8f9fab7; /* Colore di sfondo per le righe dispari */
+        }
+
     </style>
 
 </head>
@@ -221,14 +227,14 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#PerDayTrafficSummary" role="button" aria-expanded="false" aria-controls="PerDayTrafficSummary">
+            <a data-bs-toggle="collapse" href="#PerDayTrafficSummary" role="button" aria-expanded="false" aria-controls="PerDayTrafficSummary">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Per-Day Traffic Summary</h6>
             </a>
             <div class="container collapse" id="PerDayTrafficSummary">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive" id="PerDayTrafficSummaryTable">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Date</th>
@@ -250,7 +256,7 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#PerHourTrafficDailyAverage" role="button" aria-expanded="false"
+            <a data-bs-toggle="collapse" href="#PerHourTrafficDailyAverage" role="button" aria-expanded="false"
                 aria-controls="PerHourTrafficDailyAverage">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Per-Hour Traffic Daily Average</h6>
             </a>
@@ -258,7 +264,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive" id="PerHourTrafficDailyAverageTable">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Time</th>
@@ -281,7 +287,7 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#HostDomainSummaryMessagesReceived" role="button" aria-expanded="false"
+            <a data-bs-toggle="collapse" href="#HostDomainSummaryMessagesReceived" role="button" aria-expanded="false"
                 aria-controls="HostDomainSummaryMessagesReceived">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Host/Domain Summary: Messages Received</h6>
             </a>
@@ -308,7 +314,7 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#SendersbyMessageSize" role="button" aria-expanded="false" aria-controls="SendersbyMessageSize">
+            <a data-bs-toggle="collapse" href="#SendersbyMessageSize" role="button" aria-expanded="false" aria-controls="SendersbyMessageSize">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Senders by Message Size</h6>
             </a>
             <div class="container collapse" id="SendersbyMessageSize">
@@ -333,7 +339,7 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#SendersbyMessageCount" role="button" aria-expanded="false" aria-controls="SendersbyMessageCount">
+            <a data-bs-toggle="collapse" href="#SendersbyMessageCount" role="button" aria-expanded="false" aria-controls="SendersbyMessageCount">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Senders by Message Count</h6>
             </a>
             <div class="container collapse" id="SendersbyMessageCount">
@@ -358,7 +364,7 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#RecipientsbyMessageCount" role="button" aria-expanded="false"
+            <a data-bs-toggle="collapse" href="#RecipientsbyMessageCount" role="button" aria-expanded="false"
                 aria-controls="RecipientsbyMessageCount">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Recipients by Message Count</h6>
             </a>
@@ -366,7 +372,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Message Count</th>
@@ -385,7 +391,7 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#HostDomainSummaryMessageDelivery" role="button" aria-expanded="false"
+            <a data-bs-toggle="collapse" href="#HostDomainSummaryMessageDelivery" role="button" aria-expanded="false"
                 aria-controls="HostDomainSummaryMessageDelivery">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Host/Domain Summary: Message Delivery</h6>
             </a>
@@ -393,7 +399,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Sent Count</th>
@@ -416,14 +422,14 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#Recipientsbymessagesize" role="button" aria-expanded="false" aria-controls="Recipientsbymessagesize">
+            <a data-bs-toggle="collapse" href="#Recipientsbymessagesize" role="button" aria-expanded="false" aria-controls="Recipientsbymessagesize">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Recipients by message size</h6>
             </a>
             <div class="container collapse" id="Recipientsbymessagesize">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Size</th>
@@ -441,14 +447,14 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#Messageswithnosizedata" role="button" aria-expanded="false" aria-controls="Messageswithnosizedata">
+            <a data-bs-toggle="collapse" href="#Messageswithnosizedata" role="button" aria-expanded="false" aria-controls="Messageswithnosizedata">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Messages with no size data</h6>
             </a>
             <div class="container collapse" id="Messageswithnosizedata">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table-responsive table-striped table-sm">
+                            <table class="table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">Queue ID</th>
@@ -467,14 +473,14 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#MessageDeferralDetail" role="button" aria-expanded="false" aria-controls="MessageDeferralDetail">
+            <a data-bs-toggle="collapse" href="#MessageDeferralDetail" role="button" aria-expanded="false" aria-controls="MessageDeferralDetail">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Message Deferral Detail</h6>
             </a>
             <div class="container collapse" id="MessageDeferralDetail">
                 <div class="row">
                     <div class="col-md-12">
                         <br>
-                        <div class="pre-scrollable" style="max-height: 40vh; ">
+                        <div class="pre-scrollable" >
                             <pre>
                                     ##MessageDeferralDetail##
                         </pre>
@@ -488,7 +494,7 @@
 
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#MessageBounceDetailbyrelay" role="button" aria-expanded="false"
+            <a data-bs-toggle="collapse" href="#MessageBounceDetailbyrelay" role="button" aria-expanded="false"
                 aria-controls="MessageBounceDetailbyrelay">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Message Bounce Detail (By Relay)</h6>
             </a>
@@ -496,7 +502,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <br>
-                        <div class="pre-scrollable" style="max-height: 40vh; ">
+                        <div class="pre-scrollable" >
                             <pre>
                                         ##MessageBounceDetailbyrelay##
                             </pre>
@@ -508,14 +514,14 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#MailWarnings" role="button" aria-expanded="false" aria-controls="MailWarnings">
+            <a data-bs-toggle="collapse" href="#MailWarnings" role="button" aria-expanded="false" aria-controls="MailWarnings">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Mail Warnings</h6>
             </a>
             <div class="container collapse" id="MailWarnings">
                 <div class="row">
                     <div class="col-md-12">
                         <br>
-                        <div class="pre-scrollable" style="max-height: 40vh; ">
+                        <div class="pre-scrollable" >
                             <pre>
                                             ##MailWarnings##
                                 </pre>
@@ -527,14 +533,14 @@
         </div>
 
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <a data-toggle="collapse" href="#MailFatalErrors" role="button" aria-expanded="false" aria-controls="MailFatalErrors">
+            <a data-bs-toggle="collapse" href="#MailFatalErrors" role="button" aria-expanded="false" aria-controls="MailFatalErrors">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Mail Fatal Errors</h6>
             </a>
             <div class="container collapse" id="MailFatalErrors">
                 <div class="row">
                     <div class="col-md-12">
                         <br>
-                        <div class="pre-scrollable" style="max-height: 40vh; ">
+                        <div class="pre-scrollable" >
                             <pre>
                                         ##MailFatalErrors##
                                     </pre>
@@ -559,8 +565,8 @@
             <p>&copy;
                 <script>new Date().getFullYear() > 2010 && document.write(new Date().getFullYear());</script>
                 <br>
-                <span>Powered by <a href="https://github.com/KTamas/pflogsumm">PFLOGSUMM</a> </span> /
-                <span><a href="https://github.com/RiaanPretoriusSA/PFLogSumm-HTML-GUI">PFLOGSUMM HTML UI Report</a>
+                <span>Powered by <a href="https://github.com/sarahkadar/pflogsumm">PFLOGSUMM</a> </span> /
+                <span><a href="https://github.com/shellrent/PFLogSumm-HTML-GUI">PFLOGSUMM HTML UI Report</a>
                 </span>
             </p>
         </div>
