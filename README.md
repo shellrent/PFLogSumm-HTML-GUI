@@ -7,9 +7,9 @@ The script processes the pflogsumm output to an easy to view HTML report
 
 ## Screenshots of the web interface
 
-![Screenshot1](.\Screenshots\Screenshot1.png)
+![Screenshot1](https://github.com/shellrent/PFLogSumm-HTML-GUI/blob/master/Screenshots/Screenshot1.png)
 
-![Screenshot1](.\Screenshots\Screenshot2.png)
+![Screenshot2](https://github.com/shellrent/PFLogSumm-HTML-GUI/blob/master/Screenshots/Screenshot2.png)
 
 ## Requirements
 
