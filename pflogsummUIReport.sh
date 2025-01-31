@@ -116,12 +116,13 @@ function ExtractData(){
     #Extract Sections from PFLOGSUMM
     if grep -q -E '^Per-Day' "$TEMPDIR/mailreport"; then
         sed -n '/^Grand Totals/,/^Per-Day/p;/^Per-Day/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,3ba' -e 'P;D' | sed '/^$/d' > "$TEMPDIR/GrandTotals"
+        sed -n '/^Per-Day Traffic Summary/,/^Per-Hour/p;/^Per-Hour/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/PerDayTrafficSummary"
     else
         sed -n '/^Grand Totals/,/^Per-Hour/p;/^Per-Hour/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,3ba' -e 'P;D' | sed '/^$/d' > "$TEMPDIR/GrandTotals"
+        touch "$TEMPDIR/PerDayTrafficSummary"
     fi
 
-    sed -n '/^Per-Day Traffic Summary/,/^Per-Hour/p;/^Per-Hour/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/PerDayTrafficSummary"
-    sed -n '/^Per-Hour Traffic Summary/,/^Host\//p;/^Host\//q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/PerHourTrafficDailyAverage"
+    sed -n '/^Per-Hour Traffic Daily Average/,/^Host\//p;/^Host\//q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/PerHourTrafficDailyAverage"
 
     sed -n '/^Host\/Domain Summary\: Message Delivery/,/^Host\/Domain Summary\: Messages Received/p;/^Host\/Domain Summary\: Messages Received/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/HostDomainSummaryMessageDelivery"
     sed -n '/^Host\/Domain Summary\: Messages Received/,/^Senders by message count/p;/^Senders by message count/q' "$TEMPDIR/mailreport" | sed -e '1,4d' | sed -e :a -e '$d;N;2,2ba' -e 'P;D'  > "$TEMPDIR/HostDomainSummaryMessagesReceived"
@@ -215,6 +216,7 @@ function ExtractData(){
         PerHourTrafficDailyAverageTable+="<tr>"
         PerHourTrafficDailyAverageTable+="<td>0</td>""<td>0</td>""<td>0</td>""<td>0</td>""<td>0</td>""<td>0</td>"
         PerHourTrafficDailyAverageTable+="</tr>"
+        echo "$PerHourTrafficDailyAverageTable" >> "$TEMPDIR/PerHourTrafficDailyAverage_tmp"
     fi
     $MOVEF "$TEMPDIR/PerHourTrafficDailyAverage_tmp" "$TEMPDIR/PerHourTrafficDailyAverage" &> /dev/null
 
